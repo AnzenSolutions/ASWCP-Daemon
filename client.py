@@ -27,7 +27,6 @@ import hmac
 log = logging.getLogger(__name__)
 
 _BASE_DEFAULTS = {
-    'command_parse' : "",
     'arg_sep' : " ",
     "listen_port" : 5222,
     "master_port" : 5223,
