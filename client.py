@@ -27,12 +27,8 @@ import hmac
 log = logging.getLogger(__name__)
 
 _BASE_DEFAULTS = {
-    'command_parse' : "",
     'arg_sep' : " ",
     "listen_port" : 5222,
-    "master_port" : 5223,
-    "enable_debug" : False,
-    "host" : "localhost",
     "tcp" : True,
     "threaded" : True,
     "sshport" : 22,
@@ -55,9 +51,6 @@ _LOG_LEVELS = {
 }
 
 loglevel = _LOG_LEVELS.get(str(conf.log_level).lower(), "info")
-
-if conf.enable_debug == True:
-    loglevel = _LOG_LEVELS["debug"]
 
 logging.basicConfig(level=loglevel, format='%(levelname)-8s at %(asctime)s : %(message)s')
 
