@@ -29,7 +29,6 @@ log = logging.getLogger(__name__)
 _BASE_DEFAULTS = {
     'arg_sep' : " ",
     "listen_port" : 5222,
-    "master_port" : 5223,
     "enable_debug" : False,
     "host" : "localhost",
     "tcp" : True,
