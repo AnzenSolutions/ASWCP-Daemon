@@ -29,7 +29,6 @@ log = logging.getLogger(__name__)
 _BASE_DEFAULTS = {
     'arg_sep' : " ",
     "listen_port" : 5222,
-    "host" : "localhost",
     "tcp" : True,
     "threaded" : True,
     "sshport" : 22,
