@@ -1,5 +1,7 @@
 #!/bin/sh
 
-kill -15 `ps aux | grep aswcp_daemon | grep -v grep | awk '{print $2}'`
+PID=$(netstat -ntlup | grep python | grep `cat .config | grep "listen_port" | awk '{print $3}'` | awk '{print $7}' | cut -d/ -f1)
+
+kill -15 $PID
 
 exit 0
