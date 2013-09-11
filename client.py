@@ -53,9 +53,6 @@ _LOG_LEVELS = {
 
 loglevel = _LOG_LEVELS.get(str(conf.log_level).lower(), "info")
 
-if conf.enable_debug == True:
-    loglevel = _LOG_LEVELS["debug"]
-
 logging.basicConfig(level=loglevel, format='%(levelname)-8s at %(asctime)s : %(message)s')
 
 plugins = find_plugins()
