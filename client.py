@@ -132,6 +132,7 @@ call_end = 0
 prog_start = time()
 
 def send_response(rid, api, status=True, data=""):
+    print "> Response:",data
     tmp = {"status" : status, "data" : data}
 
     body = encode(json.dumps(tmp))
@@ -198,7 +199,8 @@ class ASWCP_Daemon(SS.BaseRequestHandler):
         
         self.log.debug("Sending %s status response to server with data: \"%s\"" % (status, data))
         self.request.sendall(send_response(rid, api, status, data))
-
+        self.request.close()
+        
         call_end = time()
 
         self.log.debug("Request took %d seconds to complete." % (call_end - call_start))
